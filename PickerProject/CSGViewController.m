@@ -32,8 +32,6 @@
 - (IBAction)choosePhoto:(id)sender
 
 {
-
-    
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Use Camera?"
                                                              delegate:self
                                                     cancelButtonTitle:@"Cancel"
@@ -43,24 +41,8 @@
     actionSheet.destructiveButtonIndex = 1;
     [actionSheet showInView:self.view];
     // [actionSheet release];
-   
-//    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-//    [picker setDelegate:self];
-//
-//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-//        [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
-//    else
-//    {
-//        [picker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
-//    }
-//    [picker setAllowsEditing:YES];
-//    [self presentViewController:picker animated:YES completion:^{
-//        NSLog(@"Showing Camera");
-//    }];
-    
-    
-    
 }
+
 - (void)applyFilterToImage:(UIImage *)image
 {
     // filter the image
@@ -91,20 +73,8 @@
 
 - (void)takePhotoWithCamera:(UIImagePickerController *)picker
 {
-//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-//        [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
-//    else
-//    {
-//        [picker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
-//    }
-//    [picker setAllowsEditing:YES];
-//    [self presentViewController:picker animated:YES completion:^{
-//        NSLog(@"Showing Camera");
-//    }];
+
 }
-//- (void)selectPhotoFromLibrary:(UIImagePickerController *)picker
-//{
-//}
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -124,6 +94,25 @@
         [self presentViewController:picker animated:YES completion:^{
             NSLog(@"Showing Camera");
         }];
+        //added in class 11/7
+         UIView *overlayView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
+        overlayView.layer.borderColor = [[UIColor redColor] CGColor];
+        overlayView.layer.borderWidth = 5.0f;
+      
+        // makes a red frame on view
+        
+        UIButton *overlayButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 60)];
+        overlayButton.center = overlayView.center;
+        overlayButton.backgroundColor = [UIColor yellowColor];
+        overlayButton.titleLabel.text = @"close picker";
+        overlayButton.tintColor = [UIColor blackColor];
+        //not working :(
+       //button made programatically
+        [overlayButton addTarget:self
+                          action:@selector(overlayButtonTapped)
+                forControlEvents:UIControlEventTouchUpInside];
+        [overlayView addSubview: overlayButton];
+          picker.cameraOverlayView = overlayView;
     }
     else if (buttonIndex == 1)
     {
@@ -143,25 +132,12 @@
     {
         NSLog(@"cancel");
     }
-    
-//    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-//    [picker setDelegate:self];
-//    
-//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-//        [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
-//    else
-//    {
-//        [picker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
-//    }
-//    [picker setAllowsEditing:YES];
-//    [self presentViewController:picker animated:YES completion:^{
-//        NSLog(@"Showing Camera");
-//    }];
 }
-
-
-
-
+// added in class 11/7
+-(void)overlayButtonTapped
+{
+    [self dismissViewControllerAnimated:TRUE completion:nil];
+}
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
