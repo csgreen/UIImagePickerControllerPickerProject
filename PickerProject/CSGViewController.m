@@ -103,9 +103,12 @@
         
         UIButton *overlayButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 60)];
         overlayButton.center = overlayView.center;
-        overlayButton.backgroundColor = [UIColor yellowColor];
-        overlayButton.titleLabel.text = @"close picker";
-        overlayButton.tintColor = [UIColor blackColor];
+        overlayButton.backgroundColor = [UIColor blueColor];
+     
+        [overlayButton setTitle:@"close picker" forState:UIControlStateNormal];
+        
+        // have to call method 
+        
         //not working :(
        //button made programatically
         [overlayButton addTarget:self
