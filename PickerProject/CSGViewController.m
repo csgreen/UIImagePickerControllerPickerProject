@@ -196,6 +196,42 @@
     }
     
 }
+//- (IBAction)showMailPicker:(id)sender
+//{
+//    // You must check that the current device can send email messages before you
+//    // attempt to create an instance of MFMailComposeViewController.  If the
+//    // device can not send email messages,
+//    // [[MFMailComposeViewController alloc] init] will return nil.  Your app
+//    // will crash when it calls -presentViewController:animated:completion: with
+//    // a nil view controller.
+//    if ([MFMailComposeViewController canSendMail])
+//        // The device can send email.
+//    {
+//        [self displayMailComposerSheet];
+//    }
+//    else
+//        // The device can not send email.
+//    {
+//        self.feedbackMsg.hidden = NO;
+//		self.feedbackMsg.text = @"Device not configured to send mail.";
+//    }
+//}
+//- (void)displayMailComposerSheet
+//{
+//	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+//	picker.mailComposeDelegate = self;
+//	
+//	[picker setSubject:@"Look what I made!"];
+//	
+//	NSString *path = [[NSBundle mainBundle] pathForResource:@"rainy" ofType:@"jpg"];
+//	NSData *myData = [NSData dataWithContentsOfFile:path];
+//	[picker addAttachmentData:myData mimeType:@"image/jpeg" fileName:@"rainy"];
+//	
+//	NSString *emailBody = @"I wrote an awesome app to make edgy photos. Jealous?";
+//	[picker setMessageBody:emailBody isHTML:NO];
+//	
+//	[self presentViewController:picker animated:YES completion:NULL];
+//}
 
 
 @end
