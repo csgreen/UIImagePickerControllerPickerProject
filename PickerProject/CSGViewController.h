@@ -10,4 +10,6 @@
 
 @interface CSGViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+
 @end
