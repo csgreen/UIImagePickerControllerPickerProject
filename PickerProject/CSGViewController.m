@@ -198,12 +198,6 @@
 }
 //- (IBAction)showMailPicker:(id)sender
 //{
-//    // You must check that the current device can send email messages before you
-//    // attempt to create an instance of MFMailComposeViewController.  If the
-//    // device can not send email messages,
-//    // [[MFMailComposeViewController alloc] init] will return nil.  Your app
-//    // will crash when it calls -presentViewController:animated:completion: with
-//    // a nil view controller.
 //    if ([MFMailComposeViewController canSendMail])
 //        // The device can send email.
 //    {
