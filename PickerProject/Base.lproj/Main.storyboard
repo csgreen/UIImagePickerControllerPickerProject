@@ -30,6 +30,17 @@
                                 <rect key="frame" x="46" y="49" width="240" height="229"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jr5-iH-d2O">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Share" id="53i-95-tPe">
+                                        <connections>
+                                            <action selector="shareAction:" destination="vXZ-lx-hvc" id="CqB-JS-lD9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -37,13 +48,7 @@
                             <constraint firstItem="LTk-Xz-f1x" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="111" id="uKN-kE-I1u"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Share" id="53i-95-tPe">
-                            <connections>
-                                <action selector="shareAction:" destination="vXZ-lx-hvc" id="CqB-JS-lD9"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="5jo-EH-ipM" id="5sU-ss-g0j"/>

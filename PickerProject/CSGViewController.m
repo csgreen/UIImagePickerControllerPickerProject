@@ -179,14 +179,14 @@
         case 0: // Facebook
             shareViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
             [shareViewController setInitialText:@"Check out my Social.framework on Facebook"];
-            [shareViewController addImage:_filteredImage.images];
+            [shareViewController addImage:_filteredImage];
             [shareViewController addURL:[NSURL URLWithString:@"http://facebook.com/mydemoapp"]];
             [self presentViewController:shareViewController animated:YES completion:nil];
             break;
         case 1: // Twitter
             shareViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
             [shareViewController setInitialText:@"Check out my Social.framework on Twitter"];
-            [shareViewController addImage:_filteredImage.images];
+            [shareViewController addImage:_filteredImage];
             [shareViewController addURL:[NSURL URLWithString:@"http://twitter.com/mydemoapp"]];
             [self presentViewController:shareViewController animated:YES completion:nil];
             break;
